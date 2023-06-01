@@ -11,6 +11,7 @@
 </head>
 <body>
     <?php
+    
     ?>
     <div class="container">
         <div class="row">
@@ -18,7 +19,7 @@
                  <p class="title">
                     PHÁT SINH CHỮ KÝ
                 </p>
-                <form method="post" action="process.php" enctype="multipart/form-data">
+                <form method="post" action="process_ky.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-2 div-sidebar">Văn bản ký: </div>
                         <div class="col-8">
@@ -38,19 +39,22 @@
                         
                     </div>
                 </form>
-                <form style="margin-top: 50px;" method="post" action="/process.php">
+                <form style="margin-top: 50px;" method="post" action="process_chuyen_luu.php">
                     <div class="row">
                         <div class="col-2 div-sidebar">Chữ ký: </div>
                         <div class="col-8">
-                            <textarea name="" id="" cols="35" rows="3"><?php 
+                            <textarea name="chuKy" id="" cols="35" rows="3"><?php 
+                                if (isset($_GET['error'])){
+                                    $error = $_GET['error'];
+                                    echo $error;
+                                }
                                 if(isset($_GET['chuKy1'])){
                                     $chu_ky1 = $_GET['chuKy1'];
                                     echo $chu_ky1;
                                 } ?></textarea>
-                            <button class="btn btn-chuyen">Chuyển</button>
-                            <button class="btn btn-luu">Lưu</button>
+                            <button class="btn btn-chuyen" name="chuyen">Chuyển</button>
+                            <button class="btn btn-luu" name="luu">Lưu</button>
                         </div>
-                        
                     </div>
                 </form>
             </div>
@@ -89,5 +93,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>

@@ -15,7 +15,7 @@ fclose($fptr);
 $keyBits = 512;
 
     $config = [
-        // Config OpenSSL dari XAMPP
+        // Config OpenSSL dari laragon
         'config' => 'E:\laragon\www\RSA\openssl.cnf',
 
         // Ubah Default Config
@@ -33,7 +33,11 @@ $keyBits = 512;
     // Public key
     $publickey = openssl_pkey_get_details($keypair);
     $pubKey = $publickey["key"];
-    $message = $van_ban_ky;
+    if($van_ban_ky == null){
+        header("location:index.php?error=Vui lòng điền văn bản ký");
+    }else{
+        $message = $van_ban_ky;
+    }
     $signature;
     $result = openssl_sign($message, $signature, $privKey);
     $chu_ky1 = bin2hex($signature);
