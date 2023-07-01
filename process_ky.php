@@ -9,6 +9,7 @@ $q = $_POST['q'];
 $b = $_POST['b'];
 $explode_vanBanKy = explode(' ', $van_ban_ky);
 
+
 //---------Lấy ra nội dung của file----------//
 
 $file_tmp_name = $_FILES["inputField"]["tmp_name"];
@@ -16,6 +17,7 @@ $file_tmp_name = $_FILES["inputField"]["tmp_name"];
 $fptr = fopen("$file_tmp_name", "r");
 $content = fread($fptr, filesize("$file_tmp_name"));
 fclose($fptr);
+
 
 //-----------------FUNCTION-------------------//
 function n($p, $q){
@@ -82,4 +84,5 @@ foreach($hamKy as $value)
 // $_SESSION['hamKy'] = $hamKy ;
 $string_hamKy = implode(" ", $hamKy);
 
-header("location:index.php?p=$p&q=$q&b=$b&vanBanKy=$van_ban_ky&fileName=$content&chuKy1=$string_hamKy");
+
+header("location:index.php?p=$p&q=$q&b=$b&vanBanKy=$van_ban_ky&fileName=$content&fileName2=$content2&chuKy1=$string_hamKy");

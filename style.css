@@ -21,12 +21,19 @@
     --bs-btn-disabled-bg: #0dcaf0;
     --bs-btn-disabled-border-color: #0dcaf0;
 }
-
+.btn-random{
+    padding: 10px 20px 10px 20px;
+    margin-left: 50px;
+}
 .btn-file{
     float: right;
     margin-top: 20px;
     padding: 10px 30px 10px 30px;
 
+}
+.btn-tai_file{
+    float: right;
+    padding: 10px 30px 10px 30px;
 }
 .btn-ky{
     margin-left: 120px;
